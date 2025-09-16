@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Min Jeu d'Échecs</title>
-    <!-- Chessboard.js CSS via CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chessboardjs/1.0.0/chessboard-1.0.0.min.css">
+    <title>Tin Jeu d'Échecs</title>
+    <!-- Chessboard.js CSS local -->
+    <link rel="stylesheet" href="chessboard.css">
     <!-- Votre CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Min Jeu d'Échecs en Ligne</h1>
+    <h1>Tin Jeu d'Échecs en Ligne</h1>
     <div id="board" style="width: 400px; margin: 0 auto;"></div>
     <div id="status"></div>
     <button id="analyzeBtn">Analyser la partie</button>
     <div id="analysisResult"></div>
 
-    <!-- Chess.js via CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.12.0/chess.min.js"></script>
-    <!-- Chessboard.js via CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chessboardjs/1.0.0/chessboard-1.0.0.min.js"></script>
-    <!-- Stockfish.js via CDN -->
+    <!-- Chess.js local ou via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chess.js@0.12.0/chess.min.js"></script>
+    <!-- Chessboard.js local -->
+    <script src="chessboard.js"></script>
+    <!-- Stockfish.js local ou via CDN -->
     <script src="https://cdn.jsdelivr.net/npm/stockfish.js@9.0.0/stockfish.min.js"></script>
     <!-- Votre script -->
     <script src="script.js"></script>
