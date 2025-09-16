@@ -1,6 +1,6 @@
 // Initialisation du jeu et de l'échiquier
-const game = new Chess();
-const board = Chessboard('board', {
+let game = new Chess();
+let board = Chessboard('board', {
     draggable: true,
     position: 'start',
     onDragStart: onDragStart,
@@ -39,5 +39,26 @@ function updateStatus() {
     status.textContent = message;
 }
 
-// Appel initial
-updateStatus();
+// Initialisation de Stockfish
+let stockfish = null;
+
+function initStockfish() {
+    stockfish = new Worker('stockfish.min.js');
+}
+
+// Fonction pour analyser la partie
+document.getElementById('analyzeBtn').addEventListener('click', () => {
+    if (!stockfish) initStockfish();
+
+    const fen = game.fen();
+    stockfish.postMessage(`position fen ${fen}`);
+    stockfish.postMessage('go depth 10');
+
+    stockfish.onmessage = (event) => {
+        if (event.data.includes('bestmove')) {
+            const bestMove = event.data.split(' ')[1];
+            document.getElementById('analysisResult').textContent =
+                `Meilleur coup suggéré : ${bestMove}`;
+        }
+    };
+});
