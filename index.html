@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Jeu d'Échecs</title>
+    <!-- Chessboard.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/chessboard-1.0.0.min.css">
+    <!-- Votre CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Jeu d'Échecs en Ligne</h1>
+    <div id="board" style="width: 400px; margin: 0 auto;"></div>
+    <div id="status"></div>
+    <button id="analyzeBtn">Analyser la partie</button>
+    <div id="analysisResult"></div>
+
+    <!-- Chess.js et Chessboard.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chess.js@0.12.0/chess.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/chessboard-1.0.0.min.js"></script>
+    <!-- Stockfish.js pour l'analyse -->
+    <script src="https://cdn.jsdelivr.net/npm/stockfish.js@9.0.0/stockfish.min.js"></script>
+    <!-- Votre script -->
+    <script src="script.js"></script>
+</body>
+</html>
